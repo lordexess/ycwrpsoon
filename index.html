@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCW ROLEPLAY - SOON</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Bebas Neue', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://cdn.discordapp.com/attachments/1356382515392413779/1357856496054173747/thecontract-artwork-png-8629-1600.png?ex=67f1b9e8&is=67f06868&hm=e5e82464127fcd22a37834f950cbf3c58ffbaa70145f9b7f8914c2d4a815d90b&');
+            background-size: cover;
+            background-position: center;
+            animation: slowZoom 60s infinite alternate;
+        }
+        
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 1;
+        }
+        
+        .noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAABBlJREFUaEPtmttx2zAQRQ+qQO4g7iDuQK7AUQVxB1YHcgVyB3YHcgdSBXIHUQdRBdR9GAaWIUGAy4dkecxwxh+RxN7dxT5ALzx5vDw5Dz8IMXp8RkQPf9+ISP687xGRz+Ij3+Trvn2X79Lm674NdCTr9Si4ExEP3/WbgP8Ion9EdC+Ah1Hw9wAXeRfxDdBLnyMB/fVvH/WC0RA7ERnAhzc8vPbx5kNkDjgLzAniIKYiEkLZ5qAaAOYE0cBMRWQC5wCzBMQCMxaR4J0TYimIKYwGkVC3gLNDlEAMRSRYKziGRVwuSDUvQ9l3IpLEUcMyjJVhVUCWDYjPWmZjEckkKzhpC06y0cDMBhGQU2wNZBMQGe+r5XuY/CwQE9uCk2gkMFaI5KsLMd8zzIEsO2sLTuLDRu4yiGEidOL9vXVlAWSbELaGbJ4jDiTJYwv5fC6yTIjRDO3iXcoRQFZ3C06iNjOyvlOZSASQvCrCrE66tNWNhewaiEyOj68GKA3M5iBa19XSbxqi1eXWPH8GvCqI1pyZAPEL1xKINcRFzRRAfFd1aYiLmcmA+FxblRCXMpMJ8a1qqyEuYSYT4l2CrYG4tJn5ICZv+tYFWIuZWSBa8P7sJvdqBVrDzCwQsVCbl01YcJgdwgXRmsOTm9itIFqF1jYzGUQvzFLQZjNakBpmbBDd8wFmdLQw1WbsEIP3A9RmVJhKM1aI0DUANUyNmSozNgiPDV8HU2umxowFIngjSEemL5eZ0oxmRoMYvRElMKPMWMxoENG7wBozSWYsZiSI5L1orZmQGc2MBJHlzTdL5jBkJmZGgsi+O2A1EzJTMiNBZN8/sppJmVEhsm8JWc1kzUgQWfcxrWZyZjSIrDvB1gXImVEhsu6Il5gpmdEgsu4NWM1IZlSIrPtEVjNSGQki654ZzEz/MRuCyH4OYHVL9J3K9B9jEI+wOw0zU/qOmSl9z8xU+pSZqfQpM1PpU2am0qfMhPQpM7E+ZSbWp8zE+pSZWJ8yE+tTZlJ9ykysT5lJ9SkzqT5lJtWnzKT6lJlYnzKT6lNmUn3KTKpPmUn1KTOpPmUm1afMpPpOZsLTp99bWzBT0qfMhPoEpvv5bYjU+oQZSZ8wI+kTZiR9woykT5iR9AkzSMbFjXkU3HyNiWHGw0z/QQExMaQxQ32nMtUHoOivDdWY6X/QQyxAT0NDZnr95ZgpmDnq0x4FCMwcV4jYGlpqZtCnQTxg5gQSW0M1ZpL6EGLsBtXMJPUhxGgNlcxk9SHE4A0qmcnqQ4jBGiQzoj6EGDwglMwU9SHE0Q2SmbK+E4jUGpQzI+o7gUitQZKZqj6E6G5QMFPVhxDdDQpmqvoQQm2QYMaiDyHEBgEzFn0IcdZgD1j1IcRZgz1g1YcQZw32gFUfQvwHYPFu5Q5kBIQAAAAASUVORK5CYII=');
+            opacity: 0.03;
+            z-index: 2;
+        }
+        
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .logo {
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .logo img {
+            width: 200px;
+            height: auto;
+        }
+        
+        .content {
+            text-align: center;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.3s forwards;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            width: 100%;
+            text-align: center;
+        }
+        
+        .soon-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .soon {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.6s forwards, glitch 2s ease-in-out infinite 2s;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+        
+        .soon::before, .soon::after {
+            content: "SOON";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+            text-align: center;
+        }
+        
+        .soon::before {
+            color: #0ff;
+            z-index: -1;
+        }
+        
+        .soon::after {
+            color: #f0f;
+            z-index: -2;
+        }
+        
+        .description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 50px;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.9s forwards;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .discord-btn {
+            padding: 15px 40px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            background-color: #7289DA;
+            color: #000;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.2s forwards;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(114, 137, 218, 0.6);
+        }
+        
+        .discord-btn svg {
+            margin-right: 15px;
+        }
+        
+        .discord-btn:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .discord-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: 0.5s;
+        }
+        
+        .discord-btn:hover::before {
+            left: 100%;
+        }
+        
+        .separator {
+            width: 50%;
+            max-width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #be0808, transparent);
+            margin: 30px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #aaa;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            }
+            1% {
+                transform: translate(-3px, 1px);
+                text-shadow: -3px 0 red, 3px 0 #0ff;
+            }
+            2% {
+                transform: translate(3px, -1px);
+                text-shadow: -3px 0 #0ff, 3px 0 red;
+            }
+            3% {
+                transform: translate(0);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            }
+            63% {
+                transform: translate(0);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            }
+            64% {
+                transform: translate(5px, 1px);
+                text-shadow: 5px 0 #0ff, -5px 0 red;
+            }
+            65% {
+                transform: translate(-5px, -1px);
+                text-shadow: 5px 0 red, -5px 0 #0ff;
+            }
+            66% {
+                transform: translate(0);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            }
+            100% {
+                transform: translate(0);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .soon {
+                font-size: 4rem;
+                letter-spacing: 10px;
+            }
+            
+            .description {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .discord-btn {
+                padding: 12px 30px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="noise"></div>
+    
+    <div class="container">
+        <div class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1356380366721650989/1357849422771519578/LOGOXB.png?ex=67f1b352&is=67f061d2&hm=c9a081185be41a8e7bcf0c89db749b145f32cde5d0db3b744c0be5e5645dec7c&" alt="Logo Server FiveM">
+        </div>
+        
+        <div class="content">
+            <div class="title">YCW ROLEPLAY</div>
+            <div class="separator"></div>
+            <div class="soon-container">
+                <div class="soon">SOON</div>
+            </div>
+            <div class="description"> 
+                Pregătește-te pentru cea mai realistă si distractivă experiență din Los Santos.
+            </div>
+            
+            <a href="#" class="discord-btn" id="discord-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+                </svg>
+                Alătură-te pe Discord
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer">© 2025 YCW ROLEPLAY | Toate drepturile rezervate</div>
+
+    <script>
+        // Setează link-ul pentru butonul Discord
+        function setupDiscordButton() {
+            const discordBtn = document.getElementById('discord-btn');
+            // Înlocuiește cu link-ul tău Discord
+            discordBtn.href = "https://discord.gg/fGrtAe2pKH";
+            
+            // Adaugă redirect
+            discordBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = discordBtn.href;
+            });
+        }
+        
+        // Inițializează totul când pagina se încarcă
+        window.onload = function() {
+            setupDiscordButton();
+        };
+    </script>
+</body>
+</html>
